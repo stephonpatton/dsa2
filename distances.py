@@ -54,7 +54,7 @@ def create_graph(file):
 
 
 wgu_graph = create_graph("wgups_distances.csv")
-print(wgu_graph.adjacency_list)
+print(wgu_graph.adjacency_list.keys())
 print(wgu_graph.edge_weights)
 # print("Edge Weight: " + str(wgu_graph.edge_weights['300 State St', '6351 South 900 East'])) # How to check distance between two addresses
 # print(wgu_graph.edge_weights)
