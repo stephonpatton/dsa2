@@ -40,6 +40,17 @@ def get_distance_data(file):
     return data
 
 
+def get_address_data(address_file):
+    address_data = []
+    with open(address_file) as file:
+        reader = csv.reader(open(address_file))
+
+        next(reader, None)
+        for row in reader:
+            address_data.append(row[1])
+    return address_data
+
+
 def create_graph(file):
     data = get_distance_data(file)
     graph = Graph()
@@ -53,8 +64,11 @@ def create_graph(file):
     return graph
 
 
+addresses = get_address_data("addressCSV.csv")
+# print(addresses)
+
 wgu_graph = create_graph("wgups_distances.csv")
-print(wgu_graph.adjacency_list.keys())
-print(wgu_graph.edge_weights)
+# print(wgu_graph.adjacency_list.keys())
+# print(wgu_graph.edge_weights)
 # print("Edge Weight: " + str(wgu_graph.edge_weights['300 State St', '6351 South 900 East'])) # How to check distance between two addresses
 # print(wgu_graph.edge_weights)

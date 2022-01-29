@@ -19,18 +19,16 @@ def load_package_data(file):
             pack_notes = row[7]
             pack_status = 'At Hub'
             pack_truck = row[8]
+            pack_time = ''
 
             temp_list = [pack_id, pack_address, pack_city, pack_state, pack_zip, pack_deadline, pack_weight, pack_notes,
-                         pack_status, pack_truck]
+                         pack_status, pack_truck, pack_time]
 
             k = pack_id
             v = temp_list
 
             packages.insert(k, v)
         return packages
-
-
-package_hashtable = load_package_data("packageCSV.csv")
 
 
 def print_search_result(package_id):
@@ -53,5 +51,7 @@ def print_truck_count(truck):
             print(True)
 
 
+package_hashtable = load_package_data("packageCSV.csv")
+
 # print_search_result(3)
-print_all()
+# print_all()
